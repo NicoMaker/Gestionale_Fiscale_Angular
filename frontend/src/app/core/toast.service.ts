@@ -1,7 +1,11 @@
 import { Injectable, signal } from '@angular/core';
 
 export type ToastType = 'success' | 'error' | 'warning' | 'info';
-export interface Toast { id: number; msg: string; type: ToastType }
+export interface Toast {
+  id: number;
+  msg: string;
+  type: ToastType;
+}
 
 @Injectable({ providedIn: 'root' })
 export class ToastService {
@@ -13,7 +17,13 @@ export class ToastService {
     this.toasts.update((l) => [...l, t]);
     setTimeout(() => this.dismiss(t.id), ms);
   }
-  success(m: string) { this.show(m, 'success'); }
-  error(m: string) { this.show(m, 'error', 6000); }
-  dismiss(id: number) { this.toasts.update((l) => l.filter((t) => t.id !== id)); }
+  success(m: string) {
+    this.show(m, 'success');
+  }
+  error(m: string) {
+    this.show(m, 'error', 6000);
+  }
+  dismiss(id: number) {
+    this.toasts.update((l) => l.filter((t) => t.id !== id));
+  }
 }

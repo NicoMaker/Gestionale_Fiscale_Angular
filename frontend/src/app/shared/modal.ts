@@ -24,5 +24,7 @@ export class Modal {
   onBackdrop(e: MouseEvent) {
     if ((e.target as HTMLElement).classList.contains('overlay')) this.closed.emit();
   }
-  @HostListener('document:keydown.escape') esc() { this.closed.emit(); }
+  @HostListener('document:keydown.escape') esc() {
+    this.closed.emit();
+  }
 }

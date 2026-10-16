@@ -54,7 +54,10 @@ export class SocketService {
         this.socket.emit(event, payload);
       });
     const next = prev.then(run, run);
-    this.chains.set(resEvent, next.catch(() => undefined));
+    this.chains.set(
+      resEvent,
+      next.catch(() => undefined),
+    );
     return next;
   }
 

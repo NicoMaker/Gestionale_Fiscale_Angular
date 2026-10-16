@@ -18,6 +18,10 @@ export class StateService {
     return Number.isFinite(v) ? v : new Date().getFullYear();
   }
 
-  cambiaAnno(delta: number) { this.anno.update((a) => a + delta); }
-  toggleTheme() { this.theme.update((t) => (t === 'dark' ? 'light' : 'dark')); }
+  cambiaAnno(delta: number) {
+    this.anno.update((a) => a + delta);
+  }
+  toggleTheme() {
+    this.theme.update((t) => (t === 'dark' ? 'light' : 'dark'));
+  }
 }

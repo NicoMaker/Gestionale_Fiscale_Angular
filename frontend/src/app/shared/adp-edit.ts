@@ -16,38 +16,57 @@ import { STATI, oggiISO, periodoLabel, rateLabels } from '../core/utils';
         <b>{{ row().cliente_nome }}</b> · {{ periodo() }} · anno {{ row().anno }}
       </div>
       <div class="form-grid">
-        <label class="f">Stato
+        <label class="f"
+          >Stato
           <select class="input" [(ngModel)]="m.stato" (ngModelChange)="onStato()">
-            @for (s of stati; track s.value) { <option [value]="s.value">{{ s.icon }} {{ s.label }}</option> }
+            @for (s of stati; track s.value) {
+              <option [value]="s.value">{{ s.icon }} {{ s.label }}</option>
+            }
           </select>
         </label>
-        <label class="f">Data scadenza
-          <input class="input" type="date" [(ngModel)]="m.data_scadenza">
+        <label class="f"
+          >Data scadenza
+          <input class="input" type="date" [(ngModel)]="m.data_scadenza" />
         </label>
-        <label class="f">Data completamento
-          <input class="input" type="date" [(ngModel)]="m.data_completamento">
+        <label class="f"
+          >Data completamento
+          <input class="input" type="date" [(ngModel)]="m.data_completamento" />
         </label>
 
         @if (row().has_rate) {
-          <label class="f">{{ etichette()[0] || 'Saldo' }} (€)
-            <input class="input" type="number" step="0.01" [(ngModel)]="m.importo_saldo"></label>
-          <label class="f">{{ etichette()[1] || '1° acconto' }} (€)
-            <input class="input" type="number" step="0.01" [(ngModel)]="m.importo_acconto1"></label>
-          <label class="f">{{ etichette()[2] || '2° acconto' }} (€)
-            <input class="input" type="number" step="0.01" [(ngModel)]="m.importo_acconto2"></label>
+          <label class="f"
+            >{{ etichette()[0] || 'Saldo' }} (€)
+            <input class="input" type="number" step="0.01" [(ngModel)]="m.importo_saldo"
+          /></label>
+          <label class="f"
+            >{{ etichette()[1] || '1° acconto' }} (€)
+            <input class="input" type="number" step="0.01" [(ngModel)]="m.importo_acconto1"
+          /></label>
+          <label class="f"
+            >{{ etichette()[2] || '2° acconto' }} (€)
+            <input class="input" type="number" step="0.01" [(ngModel)]="m.importo_acconto2"
+          /></label>
         } @else if (row().is_contabilita) {
-          <label class="f">Importo contabilità (€)
-            <input class="input" type="number" step="0.01" [(ngModel)]="m.importo_contabilita"></label>
-          <label class="f">Importo IVA (€)
-            <input class="input" type="number" step="0.01" [(ngModel)]="m.importo_iva"></label>
-          <label class="chk"><input type="checkbox" [(ngModel)]="m.cont_completata"> Contabilità completata</label>
-          <label class="chk"><input type="checkbox" [(ngModel)]="m.iva_completata"> IVA completata</label>
+          <label class="f"
+            >Importo contabilità (€)
+            <input class="input" type="number" step="0.01" [(ngModel)]="m.importo_contabilita"
+          /></label>
+          <label class="f"
+            >Importo IVA (€)
+            <input class="input" type="number" step="0.01" [(ngModel)]="m.importo_iva"
+          /></label>
+          <label class="chk"
+            ><input type="checkbox" [(ngModel)]="m.cont_completata" /> Contabilità completata</label
+          >
+          <label class="chk"
+            ><input type="checkbox" [(ngModel)]="m.iva_completata" /> IVA completata</label
+          >
         } @else if (!row().is_checkbox) {
-          <label class="f">Importo (€)
-            <input class="input" type="number" step="0.01" [(ngModel)]="m.importo"></label>
+          <label class="f"
+            >Importo (€) <input class="input" type="number" step="0.01" [(ngModel)]="m.importo"
+          /></label>
         }
-        <label class="f full">Note
-          <textarea class="input" [(ngModel)]="m.note"></textarea></label>
+        <label class="f full">Note <textarea class="input" [(ngModel)]="m.note"></textarea></label>
       </div>
       <ng-container footer>
         <button class="btn" (click)="closed.emit()">Annulla</button>
@@ -87,7 +106,8 @@ export class AdpEdit {
   }
 
   onStato() {
-    if (this.m.stato === 'completato' && !this.m.data_completamento) this.m.data_completamento = oggiISO();
+    if (this.m.stato === 'completato' && !this.m.data_completamento)
+      this.m.data_completamento = oggiISO();
     if (this.m.stato !== 'completato') this.m.data_completamento = '';
   }
 

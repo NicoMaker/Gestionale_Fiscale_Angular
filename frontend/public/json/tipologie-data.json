@@ -119,9 +119,7 @@
     { "value": "trimestrale", "label": "📆 Trimestrale", "color": "#a78bfa" }
   ],
 
-  "periodicitaAnnuale": [
-    { "value": "annuale", "label": "🗓️ Annuale", "color": "#94a3b8" }
-  ],
+  "periodicitaAnnuale": [{ "value": "annuale", "label": "🗓️ Annuale", "color": "#94a3b8" }],
 
   "tipologie": {
     "PF": { "color": "#5b8df6", "desc": "Persona Fisica", "icon": "👤" },

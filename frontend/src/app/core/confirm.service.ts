@@ -12,7 +12,10 @@ export interface ConfirmState {
 export class ConfirmService {
   readonly state = signal<ConfirmState | null>(null);
 
-  ask(message: string, opts: { title?: string; okLabel?: string; danger?: boolean } = {}): Promise<boolean> {
+  ask(
+    message: string,
+    opts: { title?: string; okLabel?: string; danger?: boolean } = {},
+  ): Promise<boolean> {
     return new Promise((resolve) => {
       this.state.set({
         title: opts.title ?? 'Conferma',
