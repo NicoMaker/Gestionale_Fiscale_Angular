@@ -1,0 +1,135 @@
+erDiagram
+    clienti {
+        integer id PK
+        string nome
+        string codice_fiscale
+        string partita_iva
+        string email
+        string telefono
+        string indirizzo
+        string citta
+        string cap
+        string provincia
+        string pec
+        string sdi
+        string iban
+        string note
+        string referente
+        integer attivo
+        integer contabilita
+        string periodicita
+        string col2_value
+        string col3_value
+        string created_at
+        string updated_at
+    }
+
+    tipologie_cliente {
+        integer id PK
+        string codice UK
+        string nome
+        string descrizione
+        string colore
+    }
+
+    sottotipologie {
+        integer id PK
+        integer id_tipologia FK
+        string codice
+        string nome
+        integer is_separator
+        integer ordine
+    }
+
+    clienti_config_annuale {
+        integer id PK
+        integer id_cliente FK
+        integer anno
+        integer id_tipologia FK
+        integer id_sottotipologia FK
+        string col2_value
+        string col3_value
+        string periodicita
+    }
+
+    adempimenti {
+        integer id PK
+        string codice
+        string nome
+        string descrizione
+        string scadenza_tipo
+        integer is_contabilita
+        integer has_rate
+        integer is_checkbox
+        integer is_text_only
+        string rate_labels
+        integer anno_validita
+        integer attivo
+    }
+
+    adempimenti_cliente {
+        integer id PK
+        integer id_cliente FK
+        integer id_adempimento FK
+        integer anno
+        integer mese
+        integer trimestre
+        integer semestre
+        string stato
+        string data_scadenza
+        string data_completamento
+        string note
+        real importo
+        real importo_saldo
+        real importo_acconto1
+        real importo_acconto2
+        real importo_iva
+        real importo_contabilita
+        integer cont_completata
+        integer iva_completata
+    }
+
+    appunti {
+        integer id PK
+        string titolo
+        string contenuto
+        integer id_cliente FK
+        string data_inserimento
+        string data_scadenza
+        string priorita
+        integer completato
+    }
+
+    pagina_bianca {
+        integer id PK
+        string tipo
+        string titolo
+        string contenuto
+        string allegati
+        integer id_cliente FK
+        string data_creazione
+        string data_modifica
+    }
+
+    cestino {
+        integer id PK
+        string tabella
+        integer record_id
+        string dati_json
+        string eliminato_da
+        string data_eliminazione
+    }
+
+
+    %% Relazioni
+    clienti ||--o{ adempimenti_cliente : "esegue"
+    clienti ||--o{ clienti_config_annuale : "configurato in"
+    clienti ||--o| appunti : "ha"
+    clienti ||--o| pagina_bianca : "ha"
+
+    tipologie_cliente ||--o{ sottotipologie : "contiene"
+    tipologie_cliente ||--o{ clienti_config_annuale : "definita in"
+
+    sottotipologie ||--o{ clienti_config_annuale : "definita in"
+
+    adempimenti ||--o{ adempimenti_cliente : "istanziato in"

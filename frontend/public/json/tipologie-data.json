@@ -1,0 +1,154 @@
+{
+  "percorsi": {
+    "PF": [
+      {
+        "sepLabel": "PRIVATO",
+        "col2Label": "Privato",
+        "col3Label": null,
+        "codice": "PF_PRIV",
+        "hasPer": false,
+        "isForfettario": false
+      },
+      {
+        "sepLabel": "SOCIO",
+        "col2Label": "Socio",
+        "col3Label": null,
+        "codice": "PF_SOCIO",
+        "hasPer": false,
+        "isForfettario": false
+      },
+      {
+        "sepLabel": "DITTA INDIVIDUALE",
+        "col2Label": "Ditta Individuale",
+        "col3Label": "Ordinario",
+        "codice": "PF_DITTA_ORD",
+        "hasPer": true,
+        "isForfettario": false
+      },
+      {
+        "sepLabel": null,
+        "col2Label": "Ditta Individuale",
+        "col3Label": "Semplificato",
+        "codice": "PF_DITTA_SEM",
+        "hasPer": true,
+        "isForfettario": false
+      },
+      {
+        "sepLabel": null,
+        "col2Label": "Ditta Individuale",
+        "col3Label": "Forfettario",
+        "codice": "PF_DITTA_FOR",
+        "hasPer": false,
+        "isForfettario": true
+      },
+      {
+        "sepLabel": "PROFESSIONISTA",
+        "col2Label": "Professionista",
+        "col3Label": "Ordinario",
+        "codice": "PF_PROF_ORD",
+        "hasPer": true,
+        "isForfettario": false
+      },
+      {
+        "sepLabel": null,
+        "col2Label": "Professionista",
+        "col3Label": "Semplificato",
+        "codice": "PF_PROF_SEM",
+        "hasPer": true,
+        "isForfettario": false
+      },
+      {
+        "sepLabel": null,
+        "col2Label": "Professionista",
+        "col3Label": "Forfettario",
+        "codice": "PF_PROF_FOR",
+        "hasPer": false,
+        "isForfettario": true
+      }
+    ],
+    "SP": [
+      {
+        "sepLabel": null,
+        "col2Label": null,
+        "col3Label": "Ordinaria",
+        "codice": "SP_ORD",
+        "hasPer": true,
+        "isForfettario": false
+      },
+      {
+        "sepLabel": null,
+        "col2Label": null,
+        "col3Label": "Semplificata",
+        "codice": "SP_SEMP",
+        "hasPer": true,
+        "isForfettario": false
+      }
+    ],
+    "SC": [
+      {
+        "sepLabel": null,
+        "col2Label": null,
+        "col3Label": "Ordinaria",
+        "codice": "SC_ORD",
+        "hasPer": true,
+        "isForfettario": false
+      }
+    ],
+    "ASS": [
+      {
+        "sepLabel": null,
+        "col2Label": null,
+        "col3Label": "Ordinaria",
+        "codice": "ASS_ORD",
+        "hasPer": true,
+        "isForfettario": false
+      },
+      {
+        "sepLabel": null,
+        "col2Label": null,
+        "col3Label": "Semplificata",
+        "codice": "ASS_SEMP",
+        "hasPer": true,
+        "isForfettario": false
+      }
+    ]
+  },
+
+  "periodicitaIva": [
+    { "value": "mensile", "label": "📅 Mensile", "color": "#22d3ee" },
+    { "value": "trimestrale", "label": "📆 Trimestrale", "color": "#a78bfa" }
+  ],
+
+  "periodicitaAnnuale": [
+    { "value": "annuale", "label": "🗓️ Annuale", "color": "#94a3b8" }
+  ],
+
+  "tipologie": {
+    "PF": { "color": "#5b8df6", "desc": "Persona Fisica", "icon": "👤" },
+    "SP": { "color": "#a78bfa", "desc": "Società di Persone", "icon": "🤝" },
+    "SC": { "color": "#34d399", "desc": "Società di Capitali", "icon": "🏢" },
+    "ASS": { "color": "#fbbf24", "desc": "Associazione", "icon": "🏛️" }
+  },
+
+  "col2Colors": {
+    "Privato": "#5b8df6",
+    "Socio": "#a78bfa",
+    "Ditta Individuale": "#fb923c",
+    "Professionista": "#34d399"
+  },
+
+  "col3Colors": {
+    "Ordinario": "#5b8df6",
+    "Ordinaria": "#5b8df6",
+    "Semplificato": "#22d3ee",
+    "Semplificata": "#22d3ee",
+    "Forfettario": "#fbbf24"
+  },
+
+  "sepColors": {
+    "PRIVATO": "#5b8df6",
+    "SOCIO": "#a78bfa",
+    "DITTA INDIVIDUALE": "#fb923c",
+    "PROFESSIONISTA": "#34d399"
+  }
+}
